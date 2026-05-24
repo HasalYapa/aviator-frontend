@@ -3,8 +3,15 @@
 import { useEffect, useState, useCallback } from 'react';
 
 export interface DataPoint {
-  multiplier: number;
+  value?: string;
+  multiplier?: number;
   timestamp: string;
+  ml_active?: boolean;
+  signal_type?: string;
+  prediction?: string;
+  confidence?: number;
+  reason?: string;
+  [key: string]: any;
 }
 
 export const useWebSocket = (url: string) => {
